@@ -1,4 +1,13 @@
 # ChatSpace DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|username|string|null: false|
+
+### Association
+- has_many :groups,  through:  :groups_users
 
 ## groups_usersテーブル
 
