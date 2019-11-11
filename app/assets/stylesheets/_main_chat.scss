@@ -1,4 +1,34 @@
-.main-header{
+.main-chat{
   width: calc(100vw - 300px);
   float: left;
+  .main-header{
+    height: 100px;
+    border-bottom: solid 1px #eee;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    &__left{
+      margin-top: 35px;
+      &__gtoupname{
+        font-size: 20px;
+        color: #333333;
+      }
+      &__memberlist{
+        font-size: 12px;
+        color: #999999;
+        padding-top: 15px;
+      }
+    }
+    &__right{
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      border: solid 1px #38aef0;
+      color: #38aef0;
+    }
+    &__edit-btn{
+      text-decoration: none;
+    }
+  }
 }
