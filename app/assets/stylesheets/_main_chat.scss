@@ -7,7 +7,6 @@
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px #eee;
-    overflow: scroll;
     box-sizing: border-box;
     &__left{
       margin-top: 35px;
@@ -36,9 +35,8 @@
 
   .messages{
     background-color: #fafafa;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 190px);
     padding: 46px 40px;
-    overflow: scroll;
     box-sizing: border-box;
     .message{
       &__info{
@@ -54,6 +52,47 @@
       }
       &__text{
         font-size: 14px;
+      }
+    }
+  }
+  .form{
+    .new-message{
+      background-color: #ddd;
+      padding: 20px 40px;
+      height: 90px;
+      box-sizing: border-box;
+      display: flex;
+      .input-box{
+        width: 100%;
+        position: relative;
+        &__text{
+          width: 100%;
+          height: 50px;
+          border: none;
+          font-size: 16px;
+          color: #434a54;
+          padding: 0 40px 0 10px;
+          box-sizing: border-box;
+        }
+        &__image{
+          font-size: 1.3rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          box-sizing: border-box;
+          &__file{
+            display: none;
+          }
+        }
+      }
+      .input__submit--btn{
+        margin-left: 15px;
+        background-color: #38aef0;
+        padding: 0 30px;
+        width: 100px;
+        height: 50px;
+        color: white;
       }
     }
   }
