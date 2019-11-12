@@ -1,3 +1,7 @@
+:root {
+  --color-blue: #38aef0;
+}
+
 .main-chat{
   width: calc(100vw - 300px);
   float: left;
@@ -25,8 +29,8 @@
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
-      border: solid 1px #38aef0;
-      color: #38aef0;
+      border: solid 1px var(--color-blue);
+      color: var(--color-blue);
     }
     &__edit-btn{
       text-decoration: none;
@@ -88,7 +92,7 @@
       }
       .input__submit--btn{
         margin-left: 15px;
-        background-color: #38aef0;
+        background-color: var(--color-blue);
         padding: 0 30px;
         width: 100px;
         height: 50px;
