@@ -1,0 +1,30 @@
+.main-chat
+  .main-header
+    .main-header__left
+      .main-header__left__groupname
+        group_neme1
+      .main-header__left__memberlist
+        Member
+    .main-header__right
+      =link_to "#", class: "main-header__edit-btn" do
+        Edit
+
+  .messages
+    .message
+      .message__info
+        .message__info--name
+          username
+        .message__info--date
+          date
+      .message__text
+        sample message
+  
+  .form
+    .new-message
+      .input-box
+        %input{class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('far', 'image')
+          %input{class: "input-box__image__file", type: "file"}
+      %input{class: "input__submit--btn", type: "submit", value: "send"}
+    
