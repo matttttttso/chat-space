@@ -1,7 +1,11 @@
+:root{
+  --color-text: #ffffff;
+}
+
 .side-bar{
   float: left;
   width: 300px;
-  color: #FFFFFF;
+  color: var(--color-text);
   font-weight: bold;
   .side-header{
     background-color: #253141;
@@ -12,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     &__btn{
-      color: #FFFFFF;
+      color: var(--color-text);
     }
   }
 
