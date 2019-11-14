@@ -24,13 +24,15 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 0 20px;
-    &__name{
-      font-size: 15px;
-      padding-top: 20px;
-    }
-    &__menber{
-      font-size: 11px;
-      padding-bottom: 20px;
+    .group{
+      &__name{
+        font-size: 15px;
+        padding-top: 20px;
+      }
+      &__menber{
+        font-size: 11px;
+        padding-bottom: 20px;
+      }
     }
   }
 }
