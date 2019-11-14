@@ -1,27 +1,21 @@
 .side-bar
-  .header
-    %h3.header__name
+  .side-header
+    .side-header__left
       = current_user.name
-    %ul.header__lists
-      %li.list
-        = link_to do
-          = fa_icon 'pencil-square-o', class: 'icon'
-      %li.list
-        = link_to edit_user_path(current_user) do
-          = fa_icon 'cog', class: 'icon'
+    .side-header__right
+      =link_to new_group_path, class: "side-header__btn" do
+        =icon('fas', 'edit')
+        %span<>
+      =link_to edit_user_path(current_user) do
+        =icon('fas', 'cog', class: "side-header__btn")
+        %span<>
+
   .groups
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__menber
+            メッセージはまだありません
+
