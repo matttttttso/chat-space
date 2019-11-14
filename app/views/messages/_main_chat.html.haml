@@ -10,14 +10,8 @@
         Edit
 
   .messages
-    .message
-      .message__info
-        .message__info--name
-          username
-        .message__info--date
-          date
-      .message__text
-        sample message
+    = render @messages
+
   
   .form
     = form_for [@group,@message] do |f|
