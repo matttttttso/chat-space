@@ -2,11 +2,13 @@
   .main-header
     .main-header__left
       .main-header__left__groupname
-        group_neme1
+        = @group.name
       .main-header__left__memberlist
-        Member
+        Members:
+        - @group.users.each do |user|
+          = user.name
     .main-header__right
-      =link_to "#", class: "main-header__edit-btn" do
+      =link_to edit_group_path(@group), class: "main-header__edit-btn" do
         Edit
 
   .messages
