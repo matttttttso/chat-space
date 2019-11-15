@@ -2,29 +2,26 @@
   .main-header
     .main-header__left
       .main-header__left__groupname
-        group_neme1
+        = @group.name
       .main-header__left__memberlist
-        Member
+        Members:
+        - @group.users.each do |user|
+          = user.name
     .main-header__right
-      =link_to "#", class: "main-header__edit-btn" do
+      =link_to edit_group_path(@group), class: "main-header__edit-btn" do
         Edit
 
   .messages
-    .message
-      .message__info
-        .message__info--name
-          username
-        .message__info--date
-          date
-      .message__text
-        sample message
+    = render @messages
+
   
   .form
-    .new-message
-      .input-box
-        %input{class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('far', 'image')
-          %input{class: "input-box__image__file", type: "file"}
-      %input{class: "input__submit--btn", type: "submit", value: "send"}
+    = form_for [@group,@message] do |f|
+      .new-message
+        .input-box
+          = f.text_field :content, class: 'input-box__text', placeholder: "type a message"
+          = f.label :image, class: 'input-box__image' do
+            = icon('far', 'image')
+            =f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'input__submit--btn'
     

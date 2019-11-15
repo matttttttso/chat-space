@@ -25,6 +25,10 @@
     height: calc(100vh - 100px);
     padding: 0 20px;
     .group{
+      &__btn{
+        text-decoration: none;
+        color: var(--color-text);
+      }
       &__name{
         font-size: 15px;
         padding-top: 20px;
