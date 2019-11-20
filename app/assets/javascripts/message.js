@@ -40,6 +40,7 @@ $(function(){
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました")
+      $('.input__submit--btn').prop('disabled', false);
     })
   })
 });
