@@ -6,13 +6,14 @@ $(function(){
                       ${message.username}
                     </div>
                     <div class="message__info--date">
-                      ${message.date}
+                      ${message.created_at}
                     </div>
                   </div>
                   <div class="message__text">
                     <p class="message__text__content">
                       ${message.content}
                     </p>
+                    ${message.image_url ? `<img src="${message.image_url}">` : ""}
                   </div>
                 </div>`
     return html;
@@ -34,6 +35,8 @@ $(function(){
       var html = appendMessage(message);
       $('.messages').append(html);
       $('.input-box__text').val('')
+      $('form')[0].reset();
+      $('.input__submit--btn').removeAttr("disabled");
     })
     .fail(function(){
       alert('エラー')
