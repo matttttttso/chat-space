@@ -1,6 +1,6 @@
 $(function(){
   function appendMessage(message) {
-    var html = `<div class="message">
+    let html = `<div class="message">
                   <div class="message__info">
                     <div class="message__info--name">
                       ${message.username}
