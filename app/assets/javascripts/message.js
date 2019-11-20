@@ -34,12 +34,12 @@ $(function(){
     .done(function(message){
       var html = appendMessage(message);
       $('.messages').append(html);
-      $('.input-box__text').val('')
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       $('form')[0].reset();
-      $('.input__submit--btn').removeAttr("disabled");
+      $('.input__submit--btn').prop('disabled', false);
     })
     .fail(function(){
-      alert('エラー')
+      alert("メッセージ送信に失敗しました")
     })
   })
 });
