@@ -43,6 +43,7 @@
     height: calc(100vh - 190px);
     padding: 46px 40px;
     box-sizing: border-box;
+    overflow: scroll;
     .message{
       &__info{
         display: flex;
