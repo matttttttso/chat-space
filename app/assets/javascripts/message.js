@@ -1,6 +1,6 @@
 $(function(){
   var buildMessageHTML = function(message) {
-    let html = `<div class="message" data-id=${message.id}>
+    let html = `<div class="message" data-message-id=${message.id}>
                   <div class="message__info">
                     <div class="message__info--name">
                       ${message.username}
@@ -46,7 +46,7 @@ $(function(){
 
   var reloadMessages = function() {
     var last_message_id = $('.message:last').data("message-id");
-    var url = location.href.match(/\/groups\/\d/)
+    var url = location.href.match(/\/groups\/\d+/)
     $.ajax({
       url: url+"/api/messages",
       type: 'GET',
@@ -54,12 +54,12 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      var insertHTML = '';
+      var insertHTML = "";
       messages.forEach(function(message) {
         insertHTML += buildMessageHTML(message); 
         last_message_id = message.id;
+        $('.messages').append(insertHTML);
       })
-      $('.messages').append(insertHTML);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, { duration: 10});
     })
     .fail(function() {
